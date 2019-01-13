@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8"> //이부분은 web페이지가 utf-8이라는 저장되어있어서, 해당 언어로 해석해서, 나타내게하는 것이다.
+    <meta name="description" content="정보로서의 HTML"> //요약된 자료
+    <meta name="keywords" content="정보, HTML,css,javascript,프로그래밍"> //그 문서를 정의하는 단어들, web페이지를 분류하는곳에서 알아서 사용함
+    <meta name="author" content="최영재"> //만든사람
+    <meta name="refresh" content="30"> //30초 마다 refresh한다.
+
+    <title>정보로서의 HTML</title>
+  </head>
+  <body>
+    <h1>정보로서의 HTML</h1>
+    <hr color = "black">
+    HTML은 정보를 담기위한 여러 가지 도구들이 존재한다. 이번시간에는 이런 정보를 효율적으로
+    담을 수 있는 도구들을 연습해보자 <br><br><br>
+    <h2>글꼴 - font Tag(퇴출됨)</h2>
+    <hr>
+    <p>이 font tag는 퇴출된 tag이다. 따라서 되도록이면 쓰지말았으면 한다. font는  시작적인 정보
+      일뿐이지 hello에 대한 어떤 설명도 존재하지않기때문에. 파일 용양과 디자인과 관련 코드와
+      여러가지가 섞이게 되면, 정보로서의 가치가 떨어진다. 이러한 문제들떄문에 font tag를 퇴출함
+      그리고 이런 디자인적인 tag들을 퇴출시키면서, <strong>css</strong>라는 것을 도입함.</p>
+    <font size  = "7" color = red>Hello</font> world
+
+    <h2>meta Tag</h2>
+    <hr>
+    <p> meta Tag는 어떤 데이터가 있으면 그 데이터를 설명하는 데이터이다. 예를 들면 tag들은 그 안에있
+    것을 설명하는 면에서 meta라고할 수 있다. 그런데, web전체의 정보를 설명하는 정보를 알필요가 있다.
+    음 저자나,제목, 어떤 내용을 담고있나, web페이지를 검색할 때의 키워드 들 글의 본문에 표현하지는 않지만
+    상당히 중요한 정보들이다. 이떄 쓰는 것이 meta Tag이다. </p>
+
+    이부분은 web페이지에 본문에 나타는 면이다.
+    <h2>의미론적인 tag(semantic)</h2>
+    <hr>
+    <p>
+      문서의 정보를 보다 잘 표현하기 위해서는 의미에 맞는 태그를 잘 사용해야 합니다. 특히 HTML5에서는
+      웹페이지에서 통상 많이 사용하는 구조에 의미를 분명히 부여하기 위해서 의미론적 태그를 새롭게
+      정의해서 제공하고 있다. 시작적인 변화가 없다. web사이트를 만들때 사용하면 의미론적으로 좋은 코드를
+      만들수 있다.
+    </p>
+    <header>
+      <h3>1. header</h3>
+      이 부분은 web페이지상에서 가장 중요한 정보를 담는, 혹은 전체적인 정보를 담고있는 tag이다.
+    </header>
+    <footer>
+      <h3>2. footer</h3>
+      이부분은 web사이트 하단쪽에 web사이트의 부과적인 정보를 담고있다.<br>
+      예)<br>
+      <ul>
+        <li><a href="privacy.html">개인보호정책</a></li>
+        <li><a href="about.html">회사정책</a></li>
+      </ul>
+    </footer>
+    <nav>
+      <h3>3. navigation</h3>
+      이부분은 문서의 네이게이션 항목을 정의
+      <ol>
+        <li><a href="1.html">1st</a></li>
+        <li><a href="2.html">2st</a></li>
+        <li><a href="3.html">3st</a></li>
+      </ol>
+    </nav>
+    <article>
+      <h3>4. article</h3>
+      이 부부은 본문의 해당하는 영역이다. 따라서 여러 글을 쓸때 article 안에 있으면 그 web페이지가 에서의
+      본문이라고 보면되낟.
+    </article>
+    <section>
+      <h3>5. section</h3>
+      section은 비슷한 여러개의 article을 모아서 하나의 그룹을 형성한다.
+      <article>
+        본문 1
+      </article>
+      <article>
+        본문 2
+      </article>
+    </section>
+  </body>
+</html>
