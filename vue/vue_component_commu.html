@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vue Component</title>
+  </head>
+  <body>
+    <div id = "app">
+      <hr>
+      {{message}} <br>
+      <button type="button" name="button">컴포넌트 등록</button>
+      <my-component></my-component>
+      <my-local-component></my-local-component>
+      <child-component v-bind:propsdata = "message"></child-component>
+      <child-component2 v-on:show-log = "printText"></child-component2>
+      <hr>
+    </div>
+    <script src = "https://cdn.jsdelivr.net/npm/vue@2.5.2/dist/vue.js"></script>
+    <script>
+      Vue.component('child-component',{
+        props : ['propsdata'],
+        template: '<p>{{propsdata}}</p>',
+      });
+      Vue.component('child-component2',{
+        template : '<button v-on:click="showLog">show</button>',
+        methods:{
+          showLog: function(){
+            this.$emit('show-log');
+          }
+        }
+      });
+      Vue.component('my-component',{
+        template : '<div> 전역 컴포넌트가 등록되었습니다.!</div>'
+      });
+      var cmp = {
+        template : '<div>지역 컴포넌트입니다.</div>'
+      };
+      new Vue({
+        el: '#app',
+        data: {
+          message : '첫 번째 인스턴스 영역 입니당'
+        },
+        methods:{
+          printText: function(){
+            console.log("received an event");
+          }
+        },
+        components : {
+          'my-local-component' : cmp
+        },
+        beforeCreate: function(){
+          console.log("beforeCreate");
+        },
+        created: function(){
+          console.log("created");
+        },
+        mounted: function(){
+          console.log("monted");
+        },
+        updated: function(){
+          console.log("updated");
+        }
+      })
+    </script>
+  </body>
+</html>
